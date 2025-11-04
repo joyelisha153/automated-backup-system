@@ -1,0 +1,63 @@
+[2025-11-03 10:26:34] INFO: Starting backup of /home/joyelisha/test_data
+[2025-11-03 10:26:34] SUCCESS: Backup created: ./backups/backup-2025-11-03-1026.tar.gz
+[2025-11-03 10:26:34] INFO: Checksum created: ./backups/backup-2025-11-03-1026.tar.gz.md5
+[2025-11-03 10:26:34] SUCCESS: Checksum verified
+[2025-11-03 10:26:34] INFO: Backup script finished
+[2025-11-03 10:27:38] INFO: Starting backup of /home/joyelisha/test_data
+[2025-11-03 10:27:38] SUCCESS: Backup created: ./backups/backup-2025-11-03-1027.tar.gz
+[2025-11-03 10:27:38] INFO: Checksum created: ./backups/backup-2025-11-03-1027.tar.gz.md5
+[2025-11-03 10:27:38] SUCCESS: Checksum verified
+[2025-11-03 10:27:38] INFO: Backup script finished
+[2025-11-03 10:27:38] INFO: Starting backup of /home/joyelisha/test_data
+[2025-11-03 10:27:38] SUCCESS: Backup created: ./backups/backup-2025-11-03-1027.tar.gz
+[2025-11-03 10:27:38] INFO: Checksum created: ./backups/backup-2025-11-03-1027.tar.gz.md5
+[2025-11-03 10:27:38] SUCCESS: Checksum verified
+[2025-11-03 10:27:38] INFO: Backup script finished
+[2025-11-03 10:27:38] INFO: Starting backup of /home/joyelisha/test_data
+[2025-11-03 10:27:38] SUCCESS: Backup created: ./backups/backup-2025-11-03-1027.tar.gz
+[2025-11-03 10:27:38] INFO: Checksum created: ./backups/backup-2025-11-03-1027.tar.gz.md5
+[2025-11-03 10:27:38] SUCCESS: Checksum verified
+[2025-11-03 10:27:38] INFO: Backup script finished
+[2025-11-04 10:34:06] INFO: Would create backup destination: /home/joyelisha/backups
+[2025-11-04 10:34:06] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1034.tar.gz
+[2025-11-04 10:34:23] INFO: Created backup destination: /home/joyelisha/backups
+[2025-11-04 10:34:24] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1034.tar.gz
+tar: The following options were used after non-option arguments.  These options are positional and affect only arguments that follow them.  Please, rearrange them properly.
+tar: --exclude ‘.git’ has no effect
+tar: --exclude ‘node_modules’ has no effect
+tar: --exclude ‘.cache’ has no effect
+tar: Exiting with failure status due to previous errors
+[2025-11-04 10:34:24] ERROR: Failed to create archive
+[2025-11-04 10:40:31] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1040.tar.gz
+[2025-11-04 10:40:31] SUCCESS: Backup created: backup-2025-11-04-1040.tar.gz
+[2025-11-04 10:40:31] INFO: Checksum written: backup-2025-11-04-1040.tar.gz.md5
+[2025-11-04 10:40:31] INFO: Backup completed successfully for /home/joyelisha/test_backup/src
+[2025-11-04 10:41:30] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1041.tar.gz
+[2025-11-04 10:41:42] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1041.tar.gz
+[2025-11-04 10:41:42] SUCCESS: Backup created: backup-2025-11-04-1041.tar.gz
+[2025-11-04 10:41:42] INFO: Checksum written: backup-2025-11-04-1041.tar.gz.md5
+[2025-11-04 10:41:42] INFO: Backup completed successfully for /home/joyelisha/test_backup/src
+[2025-11-04 10:44:22] ERROR: Error: Source folder not found: /path/does/not/exist
+[2025-11-04 10:44:58] ERROR: Error: Source folder not found: /root/test_for_backup
+[2025-11-04 10:46:15] ERROR: Error: Source folder not found: /root/test_for_backup
+[2025-11-04 10:47:28] ERROR: Error: Source folder not found: /root/test_for_backup
+[2025-11-04 10:51:07] ERROR: Error: Source folder not found: /root/test_for_backup
+[2025-11-04 10:51:45] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1051.tar.gz
+[2025-11-04 10:51:45] SUCCESS: Backup created: backup-2025-11-04-1051.tar.gz
+[2025-11-04 10:51:45] INFO: Checksum written: backup-2025-11-04-1051.tar.gz.md5
+[2025-11-04 10:51:45] INFO: Backup completed successfully for /home/joyelisha/test_backup/src
+[2025-11-04 10:52:03] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1052.tar.gz
+[2025-11-04 10:52:03] SUCCESS: Backup created: backup-2025-11-04-1052.tar.gz
+[2025-11-04 10:52:03] INFO: Checksum written: backup-2025-11-04-1052.tar.gz.md5
+[2025-11-04 10:52:03] INFO: Backup completed successfully for /home/joyelisha/test_backup/src
+[2025-11-04 10:54:04] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1054.tar.gz
+[2025-11-04 10:54:04] SUCCESS: Backup created: backup-2025-11-04-1054.tar.gz
+[2025-11-04 10:54:04] INFO: Checksum written: backup-2025-11-04-1054.tar.gz.md5
+[2025-11-04 10:54:04] INFO: Backup completed successfully for /home/joyelisha/test_backup/src
+[2025-11-04 10:55:15] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1055.tar.gz
+[2025-11-04 10:55:31] ERROR: Error: Source folder not found: --list
+[2025-11-04 10:55:50] ERROR: Error: Source folder not found: --restore
+[2025-11-04 11:06:31] INFO: Starting backup of /home/joyelisha/test_backup/src -> /home/joyelisha/backups/backup-2025-11-04-1106.tar.gz
+[2025-11-04 11:06:31] SUCCESS: Backup created: backup-2025-11-04-1106.tar.gz
+[2025-11-04 11:06:31] INFO: Checksum written: backup-2025-11-04-1106.tar.gz.md5
+[2025-11-04 11:06:31] INFO: Backup completed successfully for /home/joyelisha/test_backup/src

@@ -1,0 +1,4 @@
+[2025-11-03 09:43:11] INFO: Starting backup of /home/joyelisha/backup-system/test_data -> /home/joyelisha/backup-system/backups/backup-2025-11-03-0943.tar.gz
+[2025-11-03 09:43:11] ERROR: Another instance is running (lock file exists at /tmp/backup-system.lock). Exiting.
+[2025-11-03 09:43:54] INFO: Starting backup of /home/joyelisha/backup-system/test_data -> /home/joyelisha/backup-system/backups/backup-2025-11-03-0943.tar.gz
+[2025-11-03 09:43:54] ERROR: Another instance is running (lock file exists at /tmp/backup-system.lock). Exiting.
