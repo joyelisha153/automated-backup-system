@@ -1,83 +1,65 @@
-Automated Backup System (Bash Script) A. Project Overview This Bash script automatically creates compressed backups of folders, verifies them, and removes older backups to save space. It is configurable, safe, and easy to use.
+Automated Backup System
 
-B. How to Use It 1️ Setup
+Project Overview: The Automated Backup System is a Bash-based utility that automatically creates compressed backups, verifies their integrity, and cleans up older backups using configurable retention rules. It is designed to run safely, efficiently, and reliably — ideal for developers, system administrators, or anyone who needs automated file backups on Linux/macOS.
 
-Clone or download this project.
+This project helps prevent data loss by:
 
-Open the folder:
+Automatically creating timestamped backups Verifying backup integrity using checksums Managing backup retention (daily, weekly, monthly) Logging every operation for full traceability
 
+Create timestamped .tar.gz backups :
+
+Automatically skip unwanted folders (like .git, node_modules, .cache) Generate checksum (.sha256) for integrity verification Delete old backups based on daily/weekly/monthly rules Dry-run mode (simulate actions without changing anything) Prevent multiple script runs using lock files Restore from any backup archive Comprehensive logging system (backup.log) Configurable via backup.config file
+
+Project Structure:
+
+backup-system/ ├── backup.sh # Main script ├── backup.config # Configuration file ├── README.md # Documentation ├── logs/ │ └── backup.log # Activity logs ├── backups/ │ ├── daily/ │ ├── weekly/ │ └── monthly/ └── test_data/ # Sample data for testing
+
+Configuration File (backup.config) :
+
+Customize all settings here — no need to modify the script itself.
+Installation Steps
+Clone the repository:
+git clone https://github.com/<your-username>/backup-system.git
 cd backup-system
+ Make the script executable: chmod +x backup.sh
 
-Make the script executable:
+ Ensure folders exist (logs, backups, test_data): mkdir -p logs backups/daily backups/weekly backups/monthly test_data/documents
 
-chmod +x backup.sh
+Basic Usage Examples
 
-2️ Edit Configuration
+*Create a backup: ./backup.sh ./test_data/documents
 
-Open the file backup.config and set:
+*Dry run (simulate backup without creating files): ./backup.sh --dry-run ./test_data/documents
 
-BACKUP_DESTINATION=/home/user/backups EXCLUDE_PATTERNS=".git,node_modules,.cache" DAILY_KEEP=7 WEEKLY_KEEP=4 MONTHLY_KEEP=3
+List all backups: ./backup.sh --list
+*Restore a backup: ./backup.sh --restore backups/daily/backup-2025-11-03-1607.tar.gz --to restored_files
 
-3️ Run Backup ./backup.sh /path/to/folder
+ How It Works
 
-This will create a backup file like:
+Backup Creation
+The script compresses the folder using tar -czf into a .tar.gz file. Excluded folders (like .git, node_modules, .cache) are skipped using patterns from backup.config. Each backup is timestamped, e.g., backup-2025-11-03-1607.tar.gz.
 
-backup-2025-11-03-1430.tar.gz
+Checksum Verification *A SHA256 checksum is generated for every backup: sha256sum backup-2025-11-03-1607.tar.gz > backup-2025-11-03-1607.tar.gz.sha256
+*Verification ensures backup integrity: sha256sum -c backup-2025-11-03-1607.tar.gz.sha256
 
-and a checksum file:
+Backup Rotation (Deletion)
+Daily: Keep last 7 backups.
 
-backup-2025-11-03-1430.tar.gz.md5
+Weekly: Keep last 4 backups.
 
-4️ Other Commands
+Monthly: Keep last 3 backups.
 
-Dry run (test mode)
+The script deletes the oldest backups beyond these limits to save space. All actions are logged in logs/backup.log.
+Checksum Verification:
 
-./backup.sh --dry-run /path/to/folder
+Every backup file has a matching .sha256 file generated via: sha256sum backup-2025-11-07-1030.tar.gz > backup-2025-11-07-1030.tar.gz.sha256
 
-→ Shows what will happen without doing it.
+During Verification : sha256sum -c backup-2025-11-07-1030.tar.gz.sha256 If the result is OK, integrity is confirmed.
 
-List all backups
+Design Decisions: 1.Bash chosen for portability and simplicity. 2.Tar + gzip provides efficient compression and easy restore. 3.SHA256 checksums ensure data integrity. 4.Lock file prevents accidental double runs. 5.Config file separates logic from settings, making it user-friendly. 6.Logs provide full audit trail of backups and deletions.
 
-./backup.sh --list
+Known Limitations: No email notifications (can be added with mail or sendmail) No incremental backup feature (only full backups for now) Works best on Linux/macOS — not natively tested on Windows PowerShell
 
-Restore a backup
+Future Improvements: Add email notification system Add incremental backups using rsync Add remote upload (e.g., AWS S3, Google Drive) Add GUI dashboard
 
-./backup.sh --restore /home/backups/backup-2025-11-03-1430.tar.gz --to /home/user/restore_folder
-
-Log File
-
-All activities are saved in:
-
-backup.log
-
-Example:
-
-[2025-11-03 14:30:15] INFO: Starting backup of /home/user/documents [2025-11-03 14:30:45] SUCCESS: Backup created successfully [2025-11-03 14:30:46] INFO: Checksum verified
-
-Automatic Cleanup
-
-The script keeps only:
-
-Last 7 daily backups
-
-Last 4 weekly backups
-
-Last 3 monthly backups Older backups are deleted automatically.
-
-Error Handling
-
-The script shows clear error messages if:
-
-Folder doesn’t exist
-
-No permission to read folder
-
-Not enough space
-
-Config file missing
-
-Example Output [2025-11-03 14:30:15] INFO: Starting backup of /home/user/documents [2025-11-03 14:30:45] SUCCESS: Backup created: backup-2025-11-03-1430.tar.gz [2025-11-03 14:30:46] INFO: Checksum verified successfully
-
-That’s It!
-
-Just run the script regularly (or add to cron) to keep your files safe automatically.
+Conclusion: This project provides a reliable, configurable, and easy-to-use backup automation system. It helps maintain organized, verified backups while saving time and storage space.
